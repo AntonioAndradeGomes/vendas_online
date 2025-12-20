@@ -5,7 +5,7 @@ import { Request } from 'express';
 
 export const UserId = createParamDecorator((_, ctx: ExecutionContext) => {
     const { authorization } = ctx.switchToHttp().getRequest<Request>().headers;
-    console.log('authorization', authorization);
+    //console.log('authorization', authorization);
     const loginPayload: LoginPayloadDto | undefined =
         authorizationToLoginPayload(authorization!);
     return loginPayload?.id;
